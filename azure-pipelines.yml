@@ -11,13 +11,13 @@ pool:
 
 steps:
 
-- task: CmdLine@2
-  inputs:
-    script: 'cd BikeStoreUI'
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+- task: CmdLine@2
+  inputs:
+    script: 'cd BikeStoreUI'
 
 - script: |
 
