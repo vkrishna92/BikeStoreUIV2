@@ -28,3 +28,10 @@ steps:
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial (0897e095-70ce-4563-978b-9b777bc831e2)'
+    appType: 'webApp'
+    WebAppName: 'salesmanagementapp'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
