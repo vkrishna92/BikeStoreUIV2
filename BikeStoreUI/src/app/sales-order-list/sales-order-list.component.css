@@ -1,0 +1,24 @@
+table {
+    width: 100%;     
+  }
+  
+  .paginator{
+    width: inherit;        
+  }
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 16.67%;
+  }
+  
+input{
+    display: inline;
+}   
+
+.salesId
+{
+    cursor: pointer;
+}

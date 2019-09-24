@@ -1,0 +1,55 @@
+<div class="container">
+        <form #f="ngForm" class="bks-form" (ngSubmit)="save(f)" >
+            <mat-list>
+                <mat-list-item><h5>Product Details</h5></mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+            <br>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                    <mat-form-field class="bks-full-width">
+                            <input matInput [(ngModel)]="product.productName" name="productname" placeholder="Prduct name">
+                    </mat-form-field>                        
+              </div>
+              <div class="form-group col-md-6">
+                    <mat-form-field class="bks-full-width">
+                            <input matInput type="number" [(ngModel)]="product.modelYear" name="modelyear" placeholder="Model year">
+                    </mat-form-field> 
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                    <mat-form-field class="bks-full-width">
+                            <mat-label>Select Brand</mat-label>
+                            <mat-select name="brandId" [(ngModel)]="product.brandId" >
+                              <mat-option *ngFor="let brand of brands" [value]="brand.id">
+                                {{brand.brandName}}
+                              </mat-option>
+                            </mat-select>
+                    </mat-form-field>                
+              </div>
+              <div class="form-group col-md-6">
+                    <mat-form-field class="bks-full-width">
+                            <mat-label>Select Category</mat-label>
+                            <mat-select [(ngModel)]="product.categoryId" name="categoryId">
+                              <mat-option *ngFor="let category of categories" [value]="category.id">
+                                {{category.categoryName}}
+                              </mat-option>
+                            </mat-select>
+                    </mat-form-field>                
+              </div>
+            </div>
+            <div class="form-row">
+                    <div class="form-group col-md-6">
+                            <mat-form-field class="bks-full-width">
+                                    <input matInput [(ngModel)]="product.listPrice" name="listprice" type="number" placeholder="List price">
+                            </mat-form-field>
+                    </div>
+                    <div class="form-group col-md-6">                     
+                    </div>
+                  </div>
+           
+            <button mat-raised-button color="primary">Add Product</button>
+          </form>
+        </div>
+    

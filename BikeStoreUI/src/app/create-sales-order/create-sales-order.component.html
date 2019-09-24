@@ -1,0 +1,80 @@
+<div class="container">
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="CustomerForm">
+      <form [formGroup]="CustomerForm">
+        <div class="row">          
+        <ng-template matStepLabel>Fill out Customer details</ng-template>
+        <div class="form-group col-md-4">
+          <mat-form-field>
+                <mat-label>Customer</mat-label>
+                <mat-select placeholder="Customer" formControlName="customerId" required>
+                  <mat-option *ngFor="let Customer of customerList" [value]="Customer.id">
+                    {{Customer.firstName}},{{Customer.lastName}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-4">
+            <mat-form-field>
+                <input matInput placeholder="Order Status" formControlName="orderStatus" required>
+              </mat-form-field>
+        </div>
+        <div class="form-group col-md-4">
+            <mat-form-field>
+            <mat-label>Warehouse</mat-label>
+            <mat-select formControlName="warehouseId" required>
+                  <mat-option *ngFor="let wh of warehousList" [value]="wh.id">
+                    {{wh.warehouseName}},{{wh.state}}
+                  </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>          
+        <div>
+          <button mat-button matStepperNext mat-raised-button color="primary" (click)="saveSalesorder()" >Next</button>
+        </div>
+      </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="ProductForm">
+      <form [formGroup]="ProductForm">
+        <ng-template matStepLabel>Add Product Details</ng-template>
+        <div class="row">
+          <div class="form-group col-md-4">
+              <mat-form-field>
+                  <mat-label>Product</mat-label>
+                  <mat-select formControlName="productId" required>
+                  <mat-option *ngFor="let p of productList" [value]="p.id">
+                    {{p.productName}},{{p.modelYear}}
+                  </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          </div>
+          <div class="form-group col-md-4">
+              <mat-form-field>
+                  <input matInput type="number" placeholder="Quantity" formControlName="quantity" required>
+                </mat-form-field>    
+          </div>
+          <div class="form-group col-md-4">
+              <mat-form-field>
+                  <input matInput type="number" placeholder="Discount" formControlName="discount" required>
+                </mat-form-field>    
+            </div>
+        </div>
+        
+        
+        
+        <div>          
+          <button mat-button matStepperNext mat-raised-button color="primary">Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+        <P>Your Order Id is {{salesOrderId}} is {{salesOrderStatus}}</P>
+      <div>
+        <button mat-button matStepperPrevious  mat-raised-button>Back</button>
+        <button mat-button (click)="saveProductLine()" mat-raised-button color="primary">Submit</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>  
+</div>

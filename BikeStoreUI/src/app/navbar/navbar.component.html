@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+    <a class="navbar-brand" href="#">Sales Management System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a  mat-button class="nav-item nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home <span class="sr-only">(current)</span></a>                
+        <button mat-button class="nav-item nav-link" [routerLink]="['/salesorder']" routerLinkActive="router-link-active">Sales Order</button>
+        <button mat-button class="nav-item nav-link" [routerLink]="['/salesorderlist']" routerLinkActive="router-link-active">Sales Order List</button>        
+        <a mat-button class="nav-item nav-link" [routerLink]="['/customers']" routerLinkActive="router-link-active">Customers</a>
+        <a mat-button class="nav-item nav-link" [routerLink]="['/products']" routerLinkActive="router-link-active">Products</a>
+        <a mat-button class="nav-item nav-link" [routerLink]="['/category']" routerLinkActive="router-link-active" >Category</a>
+        <a mat-button class="nav-item nav-link" [routerLink]="['/brands']" routerLinkActive="router-link-active">Brands</a>                        
+      </div>
+    </div>
+  </nav>

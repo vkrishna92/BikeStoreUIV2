@@ -1,0 +1,64 @@
+<div class="container">
+    <form>
+        <mat-list>
+            <mat-list-item><h5>Customer Details</h5></mat-list-item>
+            <mat-divider></mat-divider>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <mat-label>First name :</mat-label>{{salesOrder?.customerName}}
+                </div>
+                <div class="form-group col-md-6">
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                
+                </div>
+                <div class="form-group col-md-6">
+                    
+                </div>
+            </div>
+        </mat-list>
+        <mat-list>
+            <mat-list-item><h5>Order Details</h5></mat-list-item>
+            <mat-divider></mat-divider>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <mat-label>Order status :</mat-label> {{salesOrder?.orderStatus}}
+                </div>
+                <div class="form-group col-md-6">
+                    <mat-label>Warehouse: </mat-label>{{salesOrder?.warehouseName}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <mat-label>Order Date  :</mat-label>{{salesOrder?.orderDate|date}}
+                </div>
+                <div class="form-group col-md-6">
+                    <mat-label>Shipped Date :</mat-label>{{salesOrder?.shippedDate|date}}
+                </div>
+            </div>
+        </mat-list>
+        <mat-list>
+            <mat-list-item><h5>Product Details</h5></mat-list-item>
+            <mat-divider></mat-divider>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <mat-label>Product Name :</mat-label>{{orderItem?.productName}}
+                </div>
+                <div class="form-group col-md-6">
+                    <mat-label>Quantity :</mat-label>{{orderItem?.quantity}}
+                </div>
+            </div>
+            <div class="row">                
+                <div class="form-group col-md-6">
+                    <mat-label>Discount :</mat-label>{{orderItem?.discount}}
+                </div>
+            </div>
+        </mat-list>
+        <mat-chip-list aria-label="Fish selection">
+            <mat-chip color="primary" selected [routerLink]="['/salesorderlist']" routerLinkActive="router-link-active" >Got to sales orders</mat-chip>        
+          </mat-chip-list>
+    </form>
+</div>

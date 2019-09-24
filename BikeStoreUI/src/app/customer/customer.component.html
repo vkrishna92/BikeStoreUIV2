@@ -1,0 +1,72 @@
+<div class="container">
+    <form #f="ngForm" (ngSubmit)="save(f)">
+        <mat-list>
+            <mat-list-item><h5>Personal Details</h5></mat-list-item>
+            <mat-divider></mat-divider>
+        </mat-list>
+        <br>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <mat-form-field class="bks-full-width">
+              <input matInput [(ngModel)]="customer.firstName" name="firstname" placeholder="First name">
+            </mat-form-field>                        
+          </div>
+          <div class="form-group col-md-6">
+            <mat-form-field class="bks-full-width">
+              <input matInput [(ngModel)]="customer.lastName" name="lastname" placeholder="Last name">
+            </mat-form-field>                        
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <mat-form-field class="bks-full-width">
+              <input matInput [(ngModel)]="customer.phone" name="phone" placeholder="Phone">
+            </mat-form-field>                        
+          </div>
+          <div class="form-group col-md-6">
+            <mat-form-field class="bks-full-width">
+              <input matInput  type="email" [(ngModel)]="customer.email" name="email" placeholder="Email">
+            </mat-form-field>  
+          </div>
+        </div>
+ 
+        <mat-list>
+            <mat-list-item><h5>Address Details</h5></mat-list-item>
+            <mat-divider></mat-divider>
+        </mat-list>
+        <br>
+        <div class="form-group">
+          <mat-form-field class="bks-full-width">
+            <input matInput [(ngModel)]="customer.street" name="street" placeholder="Street">
+          </mat-form-field>  
+        </div>
+        <div class="form-group">
+          <mat-form-field class="bks-full-width">
+            <input matInput [(ngModel)]="customer.unit" name="unit" placeholder="unit">
+          </mat-form-field>  
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <mat-form-field class="bks-full-width">
+              <input matInput [(ngModel)]="customer.city" name="city" placeholder="City">
+            </mat-form-field>  
+          </div>
+          <div class="form-group col-md-4">
+            <mat-form-field class="bks-full-width">
+              <mat-label>Select Brand</mat-label>
+              <mat-select name="states" [(ngModel)]="customer.state" >
+                <mat-option *ngFor="let state of states" [value]="state">
+                  {{state}}
+                </mat-option>
+              </mat-select>
+              </mat-form-field>                
+          </div>
+          <div class="form-group col-md-2">
+            <mat-form-field class="bks-full-width">
+              <input matInput [(ngModel)]="customer.zipcode" name="zipcode" placeholder="Zipcode">
+            </mat-form-field>  
+          </div>
+        </div>        
+        <button type="submit" mat-raised-button color="primary">Add Customer</button>
+      </form>
+    </div>
