@@ -17,7 +17,7 @@ steps:
   displayName: 'Install Node.js'
 - task: CmdLine@2
   inputs:
-    script: 'cd BikeStoreUI/BikeStoreUI'
+    script: 'cd BikeStoreUI'
 
 - script: |
 
