@@ -23,11 +23,6 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact:Angular'
-  inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
-  condition: succeededOrFailed()
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
@@ -37,4 +32,4 @@ steps:
     deployToSlotOrASE: true
     ResourceGroupName: 'SalesManagementApp'
     SlotName: 'production'
-    packageForLinux: 
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
