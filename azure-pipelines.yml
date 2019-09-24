@@ -23,3 +23,18 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial (0897e095-70ce-4563-978b-9b777bc831e2)'
+    appType: 'webApp'
+    WebAppName: 'salesmanagementapp'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'SalesManagementApp'
+    SlotName: 'production'
+    packageForLinux: '$(System.DefaultWorkingDirectory)'
