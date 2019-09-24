@@ -16,6 +16,9 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+- task: CmdLine@2
+  inputs:
+    script: 'cd BikeStoreUI'
     npm install -g @angular/cli
     npm install
     ng build --prod
