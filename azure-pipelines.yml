@@ -15,12 +15,9 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
-- task: CmdLine@2
-  inputs:
-    script: 'cd BikeStoreUI'
 
 - script: |
-
+    cd BikeStoreUI
     npm install -g @angular/cli
     npm install
     ng build --prod
